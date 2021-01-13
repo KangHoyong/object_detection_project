@@ -75,12 +75,12 @@ while True:
         box = boxes[i, :]
         label = f"{class_names[labels[i]]}: {probs[i]:.2f}"
         cv2.rectangle(orig_image, (box[0], box[1]), (box[2], box[3]), (0, 255, 0), 4)#색상 수정
-
+        
         cv2.putText(orig_image, label,
                     (box[0]+30, box[1]+50),#text
                     cv2.FONT_HERSHEY_PLAIN ,#font
                     1,  # font scale
-                    (255, 0, 255),
+                    (0, 255, 0), # 색상수정 
                     2)  # line type
     cv2.imshow('annotated', orig_image)
     #이미지 보기
